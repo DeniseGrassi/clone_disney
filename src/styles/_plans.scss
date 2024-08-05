@@ -1,0 +1,47 @@
+.plans {
+    padding: 5.6vw;
+
+    h2 {
+        text-align: center;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 50px;
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+
+        .button {
+            margin-top: 24px;
+        }
+        
+        &__item {
+            text-align: center;
+            padding: 60px 44px 44px;
+            max-width: 380px;
+            width: 100%;
+
+            &:nth-child(2) {  /* 2 eh selecionando o 2 elemento filho.*/
+                background-image: url(../images/fundo_combo_plus.png);  /* colocando uma img de fundo*/
+                background-repeat: no-repeat; /* ele fica repetindo a img embaixo, entao aq cancela*/
+                background-size: contain; /* 'contain' faz com que a img de fundo seja redimensionada para caber dentro do elemento, mantendo a proporção original da imagem*/
+            }
+
+            img {
+                height: 83px;
+            }
+
+            strong {
+                display: block;
+                margin-top: 24px;
+            }
+        }
+    }
+
+    p {
+        text-align: center;
+    }
+}

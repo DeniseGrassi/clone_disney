@@ -1,0 +1,54 @@
+.faq {
+    padding: 5.6vw;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    &__questions {
+        &__item {
+            background-color: #13151d;
+            margin-bottom: 16px;
+
+            &__question {
+                color: #fff;
+                font-size: 20px;
+                padding: 24px;
+                display: block;
+                cursor: pointer;
+                position: relative;
+
+                &::after {   /* pseudo-elemento after: insere algo depois do elemento; */
+                    content: '+'; /* inserindo no caso o + */
+                    position: absolute; /* qnd coloca aq a posicao absoluta, tem q colocar no anterior a posicao relativa*/
+                    top: 0;
+                    right: 24px;
+                    height: 100%;
+                    display: flex;
+                    align-items: center; /* ficar no centro em relacao a altura da caixa*/
+                    font-size: 40px;
+                }
+            }
+
+            &__answer {
+                height: 0; /*deixa a resposta escondida, so abre apertando no + e pela app de um modificador --is-open */
+                overflow: hidden;  /* ocultará o conteúdo que extrapolou o container */
+                padding-left: 24px;
+                transition: height, .5s ease; /* aparecer a resposta de forma suave*/
+            }
+
+            &--is-open {
+                .faq__questions__item__question::after {
+                    content: '-';
+                }
+                
+                .faq__questions__item__answer {   
+                    height: auto;
+                    padding-bottom: 24px;
+                    transition: height, .5s ease;
+                }
+            }
+        }
+    }
+}
